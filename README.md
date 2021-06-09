@@ -1,14 +1,4 @@
-
-## Interview Task
-
-### Requirements
-
-- Webserver to serve the files
-- PHP 8.0+
-- Composer
-
-
-### Purpose of the application
+## Purpose of the application
 
 The application is used to download products data from external suppliers. The data has to be downloaded from 
 suppliers and displayed in a table form in the console. The data comes in different formats from different suppliers.
@@ -20,16 +10,39 @@ Access to other directories from the browser level should be blocked.
 
 The command is called through: `php bin/console divante:supplier-sync name_supplier`
 
-### Technical requirements of the task
+Although at this very moment suppliers available are: AwesomeSixEleven, SuperDistribution, XYZLogistics
+
+## Task Requirements
+
+- Webserver to serve the files
+- PHP 8.0+
+- Composer
+
+### Technical
 
 - Easy to add more suppliers.
 - Easy ability to add more data formats.
 - Adding the ability to log product information.
 
-### Task
+## Design
+Application communication is based on Symfony Messenger.
+Whole platform was put together using DDD, Hexagonal and Onion design. 
+Project communicates using CQRS (Command Query Responsibility Separation) pattern.
+Persistence layer was simplified by using memory as a persistence service to cut some corners in a production 
+environment InMemory implementation should be replaced by proper port like Doctrine.
+## Adding content
+### Adding new supplier
+### Adding new format
+## Libraries / frameworks used
 
-The task is to complete the existing/new structure in such a way that the application meets the description
-and technical requirements.
-It is possible to modify structures in order to achieve a business result and meet the technical requirements.
-It is possible to use further or different libraries than those existing in the structure, which should be added in
-`composer.json`
+Software used in project include:
+
+- [Docker](https://www.docker.com/)
+- [Symfony 5](https://symfony.com/)
+- [ramsey/uuid](https://github.com/ramsey/uuid)
+- [myclabs/php-enum](https://github.com/myclabs/php-enum)
+- [sabre/xml](https://github.com/sabre/xml)
+
+## License
+
+[MIT](LICENSE)

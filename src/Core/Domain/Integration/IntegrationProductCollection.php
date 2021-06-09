@@ -21,6 +21,12 @@ class IntegrationProductCollection
         $this->integrationProducts[$integrationProduct->getId()] = $integrationProduct;
     }
 
+    /** @return IntegrationProductInterface[] */
+    public function getAll(): array
+    {
+        return $this->integrationProducts;
+    }
+
     public function toArray(): array
     {
         return array_map(

@@ -8,3 +8,11 @@ services:
             - '../src/Application/Kernel.php'
     Core\:
         resource: '../src/Core'
+
+    Core\Domain\Integration\CommandHandler\SaveIntegrationProductCommandHandler:
+        arguments:
+            $logger: '@monolog.logger.integration'
+
+    Application\Service\IntegrationService:
+        arguments:
+            $logger: '@monolog.logger.integration'

@@ -47,7 +47,12 @@ class SupplierSyncCommand extends Command
 
         try {
             $supplier = $this->supplierService->getSupplierByName($supplierName);
-            $integrationProducts = $this->integrationService->getIntegrationProducts(
+
+            if(!$supplier) {
+                throw new \LogicException(sprintf('No supplier with name %s exists.', $supplierName));
+            }
+
+            $integrationProducts = $this->integrationService->runIntegration(
                 $supplier->getIntegrationUrl(),
                 $supplier->getName()
             );
