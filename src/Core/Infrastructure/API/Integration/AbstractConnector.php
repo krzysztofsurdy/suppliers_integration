@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Core\Infrastructure\API\Integration;
 
 use Core\Domain\Integration\IntegrationProductCollection;
@@ -20,7 +19,7 @@ abstract class AbstractConnector
 
     protected function getData(): string
     {
-        if(stream_is_local($this->source)) {
+        if (stream_is_local($this->source)) {
             return file_get_contents($this->source);
         }
 

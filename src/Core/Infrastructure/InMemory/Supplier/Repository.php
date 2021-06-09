@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Core\Infrastructure\InMemory\Supplier;
-
 
 use Core\Domain\Supplier\RepositoryInterface as DomainRepository;
 use Core\Domain\Supplier\Supplier as DomainSupplier;

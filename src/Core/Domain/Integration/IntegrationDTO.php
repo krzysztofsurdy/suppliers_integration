@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Core\Domain\Integration;
-
 
 use Core\Shared\Dictionary\SupplierNameEnum;
 

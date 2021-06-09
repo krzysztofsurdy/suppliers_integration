@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Core\Domain\Supplier\QueryHandler;
-
 
 use Core\Domain\Supplier\Query\GetSupplierByNameQuery;
 use Core\Domain\Supplier\RepositoryInterface;

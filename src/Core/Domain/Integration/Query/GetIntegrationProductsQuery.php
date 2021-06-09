@@ -1,14 +1,12 @@
 <?php
 
-
 namespace Core\Domain\Integration\Query;
-
 
 class GetIntegrationProductsQuery
 {
-private string $source;
-private string $supplierName;
-private array $options;
+    private string $source;
+    private string $supplierName;
+    private array $options;
 
 
     public function __construct(string $source, string $supplierName, array $options)

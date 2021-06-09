@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Core\Infrastructure\InMemory\Supplier;
 
 use Core\Domain\Supplier\Supplier as DomainSupplier;

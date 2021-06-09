@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Core\Domain\Supplier;
-
 
 class SupplierValidationException extends \Exception
 {

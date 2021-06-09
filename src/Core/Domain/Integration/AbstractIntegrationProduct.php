@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Core\Domain\Integration;
-
 
 abstract class AbstractIntegrationProduct implements IntegrationProductInterface
 {

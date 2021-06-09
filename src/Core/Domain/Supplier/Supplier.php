@@ -1,9 +1,6 @@
 <?php
 
-
 namespace Core\Domain\Supplier;
-
-
 
 use Core\Shared\Enum\IntegrationType;
 
@@ -64,5 +61,4 @@ class Supplier
             throw SupplierValidationException::noIntegrationUrl();
         }
     }
-
 }

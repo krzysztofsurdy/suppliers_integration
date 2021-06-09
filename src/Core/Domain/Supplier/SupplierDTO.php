@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Core\Domain\Supplier;
 
 class SupplierDTO

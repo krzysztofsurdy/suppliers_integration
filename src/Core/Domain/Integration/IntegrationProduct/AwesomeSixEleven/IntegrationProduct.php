@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Core\Domain\Integration\IntegrationProduct\AwesomeSixEleven;
 
 use Core\Domain\Integration\AbstractIntegrationProduct;

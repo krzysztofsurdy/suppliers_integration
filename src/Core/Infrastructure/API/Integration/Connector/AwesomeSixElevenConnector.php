@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Core\Infrastructure\API\Integration\Connector;
-
 
 use Core\Domain\Integration\IntegrationProduct\AwesomeSixEleven\IntegrationProduct;
 use Core\Infrastructure\API\Integration\AbstractJsonConnector;
@@ -17,8 +15,7 @@ class AwesomeSixElevenConnector extends AbstractJsonConnector
 
         $result = [];
 
-        foreach ($jsonData as $productData)
-        {
+        foreach ($jsonData as $productData) {
             $product = new IntegrationProduct();
             $product = $product->injectArray($productData);
             $result[] = $product;

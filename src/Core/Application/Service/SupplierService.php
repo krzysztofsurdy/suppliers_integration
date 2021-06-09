@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Core\Application\Service;
-
 
 use Core\Domain\Supplier\Query\GetSupplierByNameQuery;
 use Core\Domain\Supplier\Supplier;

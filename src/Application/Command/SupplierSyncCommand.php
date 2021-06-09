@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Application\Command;
-
 
 use App\Exception\InvalidParserException;
 use Core\Application\Service\IntegrationService;
@@ -56,7 +54,6 @@ class SupplierSyncCommand extends Command
             $table = new Table($output);
             $table->setHeaders(array('id', 'name', 'description'))->setRows($integrationProducts->toArray());
             $table->render();
-
         } catch (\InvalidArgumentException | InvalidParserException $exception) {
             $output->writeln('<error>' . $exception->getMessage() . '</error>');
         }

@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Core\Application\Service;
 
 use Core\Domain\Integration\IntegrationProductCollection;
@@ -17,13 +16,11 @@ class IntegrationService
         $this->messageBus = $messageBus;
     }
 
-    public function getIntegrationProducts
-    (
+    public function getIntegrationProducts(
         string $source,
         string $supplierName,
         array $options = []
-    ): IntegrationProductCollection
-    {
+    ): IntegrationProductCollection {
         $envelope = $this->messageBus->dispatch(new GetIntegrationProductsQuery($source, $supplierName, $options));
         $handledStamp = $envelope->last(HandledStamp::class);
 

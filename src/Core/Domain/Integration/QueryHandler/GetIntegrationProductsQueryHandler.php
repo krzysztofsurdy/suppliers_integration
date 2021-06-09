@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Core\Domain\Integration\QueryHandler;
-
 
 use Core\Domain\Integration\Integration;
 use Core\Domain\Integration\IntegrationDTO;
@@ -14,7 +12,7 @@ use Symfony\Component\Messenger\Handler\MessageHandlerInterface;
 
 class GetIntegrationProductsQueryHandler implements MessageHandlerInterface
 {
-    public function __invoke(GetIntegrationProductsQuery $query):IntegrationProductCollection
+    public function __invoke(GetIntegrationProductsQuery $query): IntegrationProductCollection
     {
         $integrationDto = new IntegrationDTO();
         $integrationDto->source = $query->getSource();
@@ -26,5 +24,4 @@ class GetIntegrationProductsQueryHandler implements MessageHandlerInterface
 
         return $connector->getIntegrationProducts();
     }
-
 }

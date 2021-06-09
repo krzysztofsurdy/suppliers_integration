@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Core\Domain\Integration;
-
 
 interface IntegrationProductInterface
 {

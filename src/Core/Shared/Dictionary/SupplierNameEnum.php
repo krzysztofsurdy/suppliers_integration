@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Core\Shared\Dictionary;
-
 
 use MyCLabs\Enum\Enum;
 
@@ -13,7 +11,7 @@ use MyCLabs\Enum\Enum;
  */
 class SupplierNameEnum extends Enum
 {
-private const XYZLOGISTICS = 'XYZLogistics';
-private const SUPERDISTRIBUTION = 'SuperDistribution';
-private const AWESOMESIXELEVEN = 'AwesomeSixEleven';
+    private const XYZLOGISTICS = 'XYZLogistics';
+    private const SUPERDISTRIBUTION = 'SuperDistribution';
+    private const AWESOMESIXELEVEN = 'AwesomeSixEleven';
 }

@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Core\Infrastructure\InMemory\Supplier;
-
 
 class Supplier
 {

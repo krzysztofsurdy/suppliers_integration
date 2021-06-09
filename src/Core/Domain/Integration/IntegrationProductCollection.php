@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Core\Domain\Integration;
-
 
 class IntegrationProductCollection
 {
@@ -16,7 +14,7 @@ class IntegrationProductCollection
         }
     }
 
-    public function add(IntegrationProductInterface $integrationProduct):void
+    public function add(IntegrationProductInterface $integrationProduct): void
     {
         $this->integrationProducts[$integrationProduct->getId()] = $integrationProduct;
     }
@@ -24,9 +22,9 @@ class IntegrationProductCollection
     public function toArray(): array
     {
         return array_map(
-            function (IntegrationProductInterface $integrationProduct){
+            function (IntegrationProductInterface $integrationProduct) {
                 return $integrationProduct->toArray();
-                },
+            },
             $this->integrationProducts
         );
     }

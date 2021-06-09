@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Core\Infrastructure\API\Integration;
-
 
 class ConnectorException extends \Exception
 {

@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Core\Infrastructure\API\Integration;
-
 
 use Core\Domain\Integration\Integration;
 use Core\Infrastructure\API\Integration\Connector\AwesomeSixElevenConnector;
@@ -15,7 +13,7 @@ class ConnectorFactory
     public static function getConnector(Integration $integration): AbstractConnector
     {
         $configuration = self::loadConfiguration();
-        if(isset($configuration[$integration->getSupplierName()->getValue()])) {
+        if (isset($configuration[$integration->getSupplierName()->getValue()])) {
             $connectorClass = $configuration[$integration->getSupplierName()->getValue()];
 
             return new $connectorClass($integration->getSource(), $integration->getOptions());
@@ -24,7 +22,7 @@ class ConnectorFactory
         throw ConnectorException::unsupportedSupplier($integration->getSupplierName()->getValue());
     }
 
-    private  static function loadConfiguration(): array
+    private static function loadConfiguration(): array
     {
         return [
             SupplierNameEnum::XYZLOGISTICS()->getValue() => XYZLogisticsConnector::class,

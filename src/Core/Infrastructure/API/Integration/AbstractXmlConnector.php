@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Core\Infrastructure\API\Integration;
 
 use Core\Domain\Integration\IntegrationProductInterface;

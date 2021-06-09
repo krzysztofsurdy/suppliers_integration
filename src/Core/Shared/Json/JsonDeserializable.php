@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Core\Shared\Json;
 
 interface JsonDeserializable
