@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Core\Infrastructure\API\Integration;
 
 use Core\Domain\Integration\IntegrationProductCollection;
+use Core\Domain\Integration\IntegrationProductInterface;
 
 abstract class AbstractConnector
 {
@@ -63,6 +64,14 @@ abstract class AbstractConnector
     }
 
     protected function getXmlMap(): array
+    {
+        return [];
+    }
+
+    /**
+     * @return IntegrationProductInterface[]
+     */
+    protected function getIntegrationProductsData(): array
     {
         return [];
     }
