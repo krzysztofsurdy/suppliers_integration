@@ -16,8 +16,4 @@ class IntegrationValidationException extends \Exception
     {
         return new self(sprintf(self::NO_FIELD_EXCEPTION_FORMAT, 'supplierName'));
     }
-    public static function noOptions(): self
-    {
-        return new self(sprintf(self::NO_FIELD_EXCEPTION_FORMAT, 'options'));
-    }
 }

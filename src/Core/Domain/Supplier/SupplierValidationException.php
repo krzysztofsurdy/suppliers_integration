@@ -10,21 +10,21 @@ class SupplierValidationException extends \Exception
 
     public static function noId(): self
     {
-        return new self(self::NO_FIELD_EXCEPTION_FORMAT, 'id');
+        return new self(sprintf(self::NO_FIELD_EXCEPTION_FORMAT, 'id'));
     }
 
     public static function noName(): self
     {
-        return new self(self::NO_FIELD_EXCEPTION_FORMAT, 'name');
+        return new self(sprintf(self::NO_FIELD_EXCEPTION_FORMAT, 'name'));
     }
 
     public static function noIntegrationType(): self
     {
-        return new self(self::NO_FIELD_EXCEPTION_FORMAT, 'integrationType');
+        return new self(sprintf(self::NO_FIELD_EXCEPTION_FORMAT, 'integrationType'));
     }
 
     public static function noIntegrationUrl(): self
     {
-        return new self(self::NO_FIELD_EXCEPTION_FORMAT, 'integrationUrl');
+        return new self(sprintf(self::NO_FIELD_EXCEPTION_FORMAT, 'integrationUrl'));
     }
 }

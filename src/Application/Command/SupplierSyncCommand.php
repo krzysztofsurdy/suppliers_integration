@@ -55,7 +55,7 @@ class SupplierSyncCommand extends Command
             $table = new Table($output);
             $table->setHeaders(array('id', 'name', 'description'))->setRows($integrationProducts->toArray());
             $table->render();
-        } catch (\InvalidArgumentException | InvalidParserException $exception) {
+        } catch (\Throwable $exception) {
             $output->writeln('<error>' . $exception->getMessage() . '</error>');
         }
 

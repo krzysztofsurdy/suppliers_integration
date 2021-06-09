@@ -56,8 +56,5 @@ class Integration
         if (empty($this->supplierName)) {
             throw IntegrationValidationException::noSupplierName();
         }
-        if (null === $this->options) {
-            throw IntegrationValidationException::noOptions();
-        }
     }
 }

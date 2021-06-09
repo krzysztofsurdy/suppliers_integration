@@ -21,6 +21,7 @@ class SupplierService
     public function getSupplierByName(string $name): ?Supplier
     {
         $envelope = $this->messageBus->dispatch(new GetSupplierByNameQuery($name));
+        /** @var HandledStamp $handledStamp */
         $handledStamp = $envelope->last(HandledStamp::class);
 
         return $handledStamp->getResult();

@@ -24,6 +24,7 @@ class IntegrationService
         array $options = []
     ): IntegrationProductCollection {
         $envelope = $this->messageBus->dispatch(new GetIntegrationProductsQuery($source, $supplierName, $options));
+        /** @var HandledStamp $handledStamp */
         $handledStamp = $envelope->last(HandledStamp::class);
 
         return $handledStamp->getResult();

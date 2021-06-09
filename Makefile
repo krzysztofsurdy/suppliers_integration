@@ -29,4 +29,4 @@ phpcbf:
 
 phpstan-analyse:
 	docker pull phpstan/phpstan
-	docker run --rm -v "$(PWD)":/app phpstan/phpstan analyse ./src
+	docker run --rm -v "$(PWD)":/app phpstan/phpstan analyse ./src --level=5
