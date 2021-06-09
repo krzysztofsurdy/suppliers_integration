@@ -22,6 +22,10 @@ class Kernel extends BaseKernel
         } elseif (is_file($path = \dirname(__DIR__) . '/../config/services.php')) {
             (require $path)($container->withPath($path), $this);
         }
+
+        foreach ($_ENV as $envKey => $envValue) {
+            putenv(sprintf('%s=%s', $envKey, $envValue));
+        }
     }
 
     protected function configureRoutes(RoutingConfigurator $routes): void

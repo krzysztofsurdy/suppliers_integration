@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Core\Domain\Integration\IntegrationProduct\AwesomeSixEleven;
 
 use Core\Domain\Integration\AbstractIntegrationProduct;

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Core\Infrastructure\API\Integration;
 
 use Core\Domain\Integration\IntegrationProductInterface;

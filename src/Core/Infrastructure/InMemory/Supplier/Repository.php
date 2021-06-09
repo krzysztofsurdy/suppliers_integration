@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Core\Infrastructure\InMemory\Supplier;
 
 use Core\Domain\Supplier\RepositoryInterface as DomainRepository;
@@ -19,19 +21,19 @@ class Repository implements DomainRepository
         $firstSupplier = new Supplier();
         $firstSupplier->id = Uuid::uuid4()->toString();
         $firstSupplier->name = SupplierNameEnum::XYZLOGISTICS()->getValue();
-        $firstSupplier->integrationUrl = 'http://127.0.0.1:8000/' . 'suppliers/supplier1.xml';
+        $firstSupplier->integrationUrl = getenv('DEFAULT_SUPPLIER_SERVER') . 'suppliers/supplier1.xml';
         $this->memory[] = $firstSupplier;
 
         $secondSupplier = new Supplier();
         $secondSupplier->id = Uuid::uuid4()->toString();
         $secondSupplier->name = SupplierNameEnum::SUPERDISTRIBUTION()->getValue();
-        $secondSupplier->integrationUrl = 'http://127.0.0.1:8000/' . 'suppliers/supplier2.xml';
+        $secondSupplier->integrationUrl = getenv('DEFAULT_SUPPLIER_SERVER') . 'suppliers/supplier2.xml';
         $this->memory[] = $secondSupplier;
 
         $thirdSupplier = new Supplier();
         $thirdSupplier->id = Uuid::uuid4()->toString();
         $thirdSupplier->name = SupplierNameEnum::AWESOMESIXELEVEN()->getValue();
-        $thirdSupplier->integrationUrl = 'http://127.0.0.1:8000/' . 'suppliers/supplier3.json';
+        $thirdSupplier->integrationUrl = getenv('DEFAULT_SUPPLIER_SERVER') . 'suppliers/supplier3.json';
         $this->memory[] = $thirdSupplier;
     }
 

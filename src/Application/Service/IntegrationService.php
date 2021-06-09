@@ -1,6 +1,8 @@
 <?php
 
-namespace Core\Application\Service;
+declare(strict_types=1);
+
+namespace Application\Service;
 
 use Core\Domain\Integration\IntegrationProductCollection;
 use Core\Domain\Integration\Query\GetIntegrationProductsQuery;

@@ -1,8 +1,8 @@
 <?php
 
-namespace Core\Domain\Supplier;
+declare(strict_types=1);
 
-use Core\Shared\Enum\IntegrationType;
+namespace Core\Domain\Supplier;
 
 class Supplier
 {
