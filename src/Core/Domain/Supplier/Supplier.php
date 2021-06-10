@@ -54,9 +54,6 @@ class Supplier
         if (empty($this->name)) {
             throw SupplierValidationException::noName();
         }
-        if (empty($this->id)) {
-            throw SupplierValidationException::noId();
-        }
         if (empty($this->integrationUrl)) {
             throw SupplierValidationException::noIntegrationUrl();
         }

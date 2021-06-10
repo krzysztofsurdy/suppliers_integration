@@ -9,6 +9,6 @@ use Core\Shared\Dictionary\SupplierNameEnum;
 class IntegrationDTO
 {
     public ?string $source = null;
-    public ?SupplierNameEnum $supplierName = null;
+    public ?string $supplierName = null;
     public ?array $options = null;
 }

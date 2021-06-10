@@ -10,6 +10,7 @@
         "ext-dom": "*",
         "ext-iconv": "*",
         "myclabs/php-enum": "^1.8",
+        "phpunit/phpunit": "^9.5",
         "ramsey/uuid": "^4.1",
         "sabre/xml": "^2.2",
         "symfony/browser-kit": "5.2.*",
@@ -38,7 +39,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "App\\Tests\\": "tests/"
+            "TestsFunctional\\": "tests/functional"
         }
     },
     "replace": {

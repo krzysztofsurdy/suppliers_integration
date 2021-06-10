@@ -18,7 +18,7 @@ class GetIntegrationProductsQueryHandler implements MessageHandlerInterface
     {
         $integrationDto = new IntegrationDTO();
         $integrationDto->source = $query->getSource();
-        $integrationDto->supplierName = new SupplierNameEnum($query->getSupplierName());
+        $integrationDto->supplierName = $query->getSupplierName();
         $integrationDto->options = $query->getOptions();
 
         $integration = new Integration($integrationDto);

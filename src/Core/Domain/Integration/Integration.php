@@ -9,7 +9,7 @@ use Core\Shared\Dictionary\SupplierNameEnum;
 class Integration
 {
     private string $source;
-    private SupplierNameEnum $supplierName;
+    private string $supplierName;
     private array $options;
 
     public function __construct(IntegrationDTO $dto)
@@ -23,7 +23,7 @@ class Integration
         return $this->source;
     }
 
-    public function getSupplierName(): SupplierNameEnum
+    public function getSupplierName(): string
     {
         return $this->supplierName;
     }

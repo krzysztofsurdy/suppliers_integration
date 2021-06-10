@@ -22,15 +22,6 @@ abstract class AbstractConnector
 
     protected function getData(): string
     {
-        if (stream_is_local($this->source)) {
-            return file_get_contents($this->source);
-        }
-
-        return $this->execute();
-    }
-
-    private function execute(): string
-    {
         $curl = curl_init();
         curl_setopt($curl, CURLOPT_URL, $this->source);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);

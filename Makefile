@@ -1,3 +1,4 @@
+PHPCLI=docker-compose exec php
 #####################
 # DEV SERVER
 #####################
@@ -11,11 +12,20 @@ stop:
 	docker-compose stop
 	docker-compose rm -f -v
 
-cli_php:
-	docker-compose exec php sh
+build: start build_local_clear build_docker_php
+	docker-compose down --remove-orphans -v
 
-cli_nginx:
-	docker-compose exec nginx sh
+build_local_clear:
+	rm -rf var/cache/*
+	echo $(CI_BUILD_REF) > .revision
+
+build_docker_php:
+	$(PHPCLI) composer install
+	$(PHPCLI) php bin/console cache:clear
+	$(PHPCLI) php bin/console cache:warmup
+
+cli_php:
+	$(PHPCLI) ash
 
 #####################
 # DEV SERVER
