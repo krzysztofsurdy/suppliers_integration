@@ -39,8 +39,7 @@ class IntegrationService
         /** @var IntegrationProductCollection $integrationProducts */
         $integrationProducts = $handledStamp->getResult();
 
-        foreach ($integrationProducts->getAll() as $integrationProduct)
-        {
+        foreach ($integrationProducts->getAll() as $integrationProduct) {
             $this->messageBus->dispatch(new SaveIntegrationProductCommand($integrationProduct));
         }
 

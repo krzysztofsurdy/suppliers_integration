@@ -48,7 +48,7 @@ class SupplierSyncCommand extends Command
         try {
             $supplier = $this->supplierService->getSupplierByName($supplierName);
 
-            if(!$supplier) {
+            if (!$supplier) {
                 throw new \LogicException(sprintf('No supplier with name %s exists.', $supplierName));
             }
 

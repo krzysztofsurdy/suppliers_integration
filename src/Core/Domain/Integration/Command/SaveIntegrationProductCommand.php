@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Core\Domain\Integration\Command;
-
 
 use Core\Domain\Integration\IntegrationProductInterface;
 

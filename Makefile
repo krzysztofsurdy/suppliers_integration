@@ -5,17 +5,17 @@
 start: stop up
 
 up:
-    docker-compose up -d --remove-orphans
+	docker-compose up -d --remove-orphans
 
 stop:
-    docker-compose stop
-    docker-compose rm -f -v
+	docker-compose stop
+	docker-compose rm -f -v
 
 cli_php:
-    docker-compose exec php bash
+	docker-compose exec php sh
 
 cli_nginx:
-    docker-compose exec nginx bash
+	docker-compose exec nginx sh
 
 #####################
 # DEV SERVER

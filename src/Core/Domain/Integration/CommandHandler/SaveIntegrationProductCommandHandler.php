@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Core\Domain\Integration\CommandHandler;
-
 
 use Core\Domain\Integration\Command\SaveIntegrationProductCommand;
 use Core\Domain\Integration\PersisterInterface;
