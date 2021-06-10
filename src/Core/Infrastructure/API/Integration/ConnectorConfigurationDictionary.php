@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Core\Infrastructure\API\Integration;
-
 
 use MyCLabs\Enum\Enum;
 
