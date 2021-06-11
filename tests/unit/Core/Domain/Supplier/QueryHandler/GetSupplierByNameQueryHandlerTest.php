@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Tests\unit\Core\Domain\Supplier\QueryHandler;
+namespace unit\Core\Domain\Supplier\QueryHandler;
 
 
 use Core\Domain\Supplier\Query\GetSupplierByNameQuery;

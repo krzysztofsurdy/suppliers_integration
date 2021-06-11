@@ -26,6 +26,7 @@ class ConnectorFactoryTest extends TestCase
     ): void
     {
         // Given
+        $connectorFactory = new ConnectorFactory();
         $dto = new IntegrationDTO();
         $dto->source = 'IT_DOES_NOT_MATTER';
         $dto->supplierName = $inputSupplierEnum->getValue();
@@ -33,7 +34,7 @@ class ConnectorFactoryTest extends TestCase
         $integration = new Integration($dto);
 
         // When
-        $connector = ConnectorFactory::getConnector($integration);
+        $connector = $connectorFactory->getConnector($integration);
 
         // Then
         $this->assertInstanceOf($expectedOutputConnectorClass, $connector);
@@ -46,6 +47,7 @@ class ConnectorFactoryTest extends TestCase
         $this->expectException(ConnectorException::class);
 
         // Given
+        $connectorFactory = new ConnectorFactory();
         $dto = new IntegrationDTO();
         $dto->source = 'IT_DOES_NOT_MATTER';
         $dto->supplierName = 'IM_UNSUPPORTED';
@@ -53,7 +55,7 @@ class ConnectorFactoryTest extends TestCase
         $integration = new Integration($dto);
 
         // When
-        $connector = ConnectorFactory::getConnector($integration);
+        $connectorFactory->getConnector($integration);
     }
 
     public function integrationDtoProvider(): array

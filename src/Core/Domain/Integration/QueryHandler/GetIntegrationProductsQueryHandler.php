@@ -9,11 +9,17 @@ use Core\Domain\Integration\IntegrationDTO;
 use Core\Domain\Integration\IntegrationProductCollection;
 use Core\Domain\Integration\Query\GetIntegrationProductsQuery;
 use Core\Infrastructure\API\Integration\ConnectorFactory;
-use Core\Shared\Dictionary\SupplierNameEnum;
 use Symfony\Component\Messenger\Handler\MessageHandlerInterface;
 
 class GetIntegrationProductsQueryHandler implements MessageHandlerInterface
 {
+    private ConnectorFactory $connectorFactory;
+
+    public function __construct(ConnectorFactory $connectorFactory)
+    {
+        $this->connectorFactory = $connectorFactory;
+    }
+
     public function __invoke(GetIntegrationProductsQuery $query): IntegrationProductCollection
     {
         $integrationDto = new IntegrationDTO();
@@ -22,7 +28,7 @@ class GetIntegrationProductsQueryHandler implements MessageHandlerInterface
         $integrationDto->options = $query->getOptions();
 
         $integration = new Integration($integrationDto);
-        $connector = ConnectorFactory::getConnector($integration);
+        $connector = $this->connectorFactory->getConnector($integration);
 
         return $connector->getIntegrationProducts();
     }

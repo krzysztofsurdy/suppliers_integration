@@ -11,7 +11,7 @@ use Core\Infrastructure\API\Integration\Connector\XYZLogisticsConnector;
 
 class ConnectorFactory
 {
-    public static function getConnector(Integration $integration): AbstractConnector
+    public function getConnector(Integration $integration): AbstractConnector
     {
         $configuration = self::loadConfiguration();
         if (isset($configuration[$integration->getSupplierName()])) {
@@ -23,7 +23,7 @@ class ConnectorFactory
         throw ConnectorException::unsupportedSupplier($integration->getSupplierName());
     }
 
-    private static function loadConfiguration(): array
+    protected static function loadConfiguration(): array
     {
         return [
             ConnectorConfigurationDictionary::XYZLOGISTICS()->getValue() => XYZLogisticsConnector::class,

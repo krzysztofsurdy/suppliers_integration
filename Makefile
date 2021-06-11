@@ -28,6 +28,13 @@ cli_php:
 	$(PHPCLI) ash
 
 #####################
+# TESTS
+#####################
+
+phpunit:
+	$(PHPCLI) ./vendor/phpunit/phpunit/phpunit
+
+#####################
 # DEV SERVER
 #####################
 
@@ -40,3 +47,16 @@ phpcbf:
 phpstan-analyse:
 	docker pull phpstan/phpstan
 	docker run --rm -v "$(PWD)":/app phpstan/phpstan analyse ./src --level=5
+
+#####################
+# TASK
+#####################
+
+integration_sup_1:
+	$(PHPCLI) php bin/console divante:supplier-sync XYZLogistics
+
+integration_sup_2:
+	$(PHPCLI) php bin/console divante:supplier-sync SuperDistribution
+
+integration_sup_3:
+	$(PHPCLI) php bin/console divante:supplier-sync AwesomeSixEleven
