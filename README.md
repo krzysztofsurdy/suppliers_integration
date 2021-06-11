@@ -13,7 +13,7 @@ Integration logs are stored in var/log/dev_integration-TIMESTAMP.log
 Although at this very moment suppliers available are:
 - XYZLogistics (supplier1.xml)
 - SuperDistribution (supplier2.xml)
-- AwesomeSixEleven (supplier3.xml)
+- AwesomeSixEleven (supplier3.json)
   
 Integration can be tested with make instruction (see Makefile section below).
   
@@ -68,7 +68,7 @@ MAKEFILE in a directory delivers commands:
     5. make phpstan-analyse   - Launch phpstan in php (composer.json requirements have to be met on host computer)
     6. make integration_sup_1 - Launches integration for supplier XYZLogistics (supplier1.xml) 
     7. make integration_sup_2 - Launches integration for supplier SuperDistribution (supplier2.xml)
-    8. make integration_sup_3 - Launches integration for supplier AwesomeSixEleven (supplier3.xml)
+    8. make integration_sup_3 - Launches integration for supplier AwesomeSixEleven (supplier3.json)
 
 How to use: $ make command
 
