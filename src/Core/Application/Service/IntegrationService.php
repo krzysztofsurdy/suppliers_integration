@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Application\Service;
+namespace Core\Application\Service;
 
 use Core\Domain\Integration\Command\SaveIntegrationProductCommand;
 use Core\Domain\Integration\IntegrationProductCollection;

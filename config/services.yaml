@@ -13,6 +13,6 @@ services:
         arguments:
             $logger: '@monolog.logger.integration'
 
-    Application\Service\IntegrationService:
+    Core\Application\Service\IntegrationService:
         arguments:
             $logger: '@monolog.logger.integration'

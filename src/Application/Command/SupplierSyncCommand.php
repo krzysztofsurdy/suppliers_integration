@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Application\Command;
 
-use Application\Service\IntegrationService;
-use Application\Service\SupplierService;
+use Core\Application\Service\IntegrationService;
+use Core\Application\Service\SupplierService;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Helper\Table;
 use Symfony\Component\Console\Input\InputArgument;
